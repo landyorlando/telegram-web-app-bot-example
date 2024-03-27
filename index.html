@@ -560,7 +560,10 @@
             }
         },
         sendTime(spam) {
-               Telegram.WebApp.sendData("Technology");
+               //Telegram.WebApp.sendData("Technology");
+               const data = JSON.stringify({type_company: "Technology"});
+               Telegram.WebApp.sendData(data);
+               Telegram.WebApp.close();
         },
 
         // Alerts
