@@ -338,7 +338,16 @@
 <section id="top_sect" class="second">
 <!--    <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>-->
 <!--    <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>-->
-    <button id="data_btn" onclick="DemoApp.sendTime(true);">Technology</button>
+    <button id="data_btn" onclick="DemoApp.sendMessageT('Technology');">Technology</button>
+    <button id="data_btn" onclick="DemoApp.sendMessageT('Finance');">Finance</button>
+    <button id="data_btn" onclick="DemoApp.sendMessageT('Retail');">Retail</button>
+    <button id="data_btn" onclick="DemoApp.sendMessageT('Healthcare');">Healthcare</button>
+    <button id="data_btn" onclick="DemoApp.sendMessageT('Manufacturing');">Manufacturing</button>
+    <button id="data_btn" onclick="DemoApp.sendMessageT('Hospitality');">Hospitality</button>
+    <button id="data_btn" onclick="DemoApp.sendMessageT('Transportation');">Transportation</button>
+    <button id="data_btn" onclick="DemoApp.sendMessageT('Real Estate');">Real Estate</button>
+    <button id="data_btn" onclick="DemoApp.sendMessageT('Entertainment');">Entertainment</button>
+    <button id="data_btn" onclick="DemoApp.sendMessageT('Education');">Education</button>
 
 
 <!--    <div-->
@@ -562,6 +571,11 @@
         sendTime(spam) {
                //Telegram.WebApp.sendData("Technology");
                const data = JSON.stringify({type_company: "Technology"});
+               Telegram.WebApp.sendData(data);
+               Telegram.WebApp.close();
+        },
+        sendMessageT(msg) {
+               const data = JSON.stringify({type_company: msg});
                Telegram.WebApp.sendData(data);
                Telegram.WebApp.close();
         },
